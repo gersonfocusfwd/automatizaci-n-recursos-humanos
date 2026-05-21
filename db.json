@@ -1,7 +1,7 @@
 {
   "kpis": [
     {
-      "id": 1,
+      "id": "1",
       "titulo": "Consultas AI Activas",
       "valor": "47 Resueltas",
       "detalle": "98% precisión de respuesta",
@@ -9,7 +9,7 @@
       "clase": "kpi-consultas"
     },
     {
-      "id": 2,
+      "id": "2",
       "titulo": "Índice de Clima Pulse",
       "valor": "8.6 / 10",
       "detalle": "+0.4 vs. mes anterior",
@@ -17,7 +17,7 @@
       "clase": "kpi-clima"
     },
     {
-      "id": 3,
+      "id": "3",
       "titulo": "Participación Anónima",
       "valor": "92% Activa",
       "detalle": "243 colaboradores esta semana",
@@ -25,7 +25,7 @@
       "clase": "kpi-participacion"
     },
     {
-      "id": 4,
+      "id": "4",
       "titulo": "Salud Emocional Promedio",
       "valor": "84% Estable",
       "detalle": "Garnier Balance en rango óptimo",
@@ -35,34 +35,54 @@
   ],
   "politicas": [
     {
-      "id": 1,
+      "id": "1",
       "categoria": "vacaciones",
       "titulo": "Política de Vacaciones y Descansos Garnier",
       "contenido": "De acuerdo con el artículo 12 del Manual Interno de Garnier & Garnier, todos los colaboradores tienen derecho a 12 días hábiles de vacaciones remuneradas tras completar un año de servicios continuos. Además, contamos con el beneficio de 'Día de Cumpleaños Libre' que puede ser gozado durante el mes de aniversario previa coordinación con la jefatura directa.",
-      "palabras_clave": ["vacacion", "libre", "cumpleaños", "descanso", "dias"],
+      "palabras_clave": [
+        "vacacion",
+        "libre",
+        "cumpleaños",
+        "descanso",
+        "dias"
+      ],
       "documento_referencia": "Manual del Colaborador - Sección 4.1",
       "tiempo_lectura": "2 min de lectura"
     },
     {
-      "id": 2,
+      "id": "2",
       "categoria": "teletrabajo",
       "titulo": "Políticas de Trabajo Híbrido Garnier Flex",
       "contenido": "El programa Garnier Flex establece un modelo de trabajo híbrido sugerido de 3 días presenciales y 2 días remotos para puestos elegibles administrativamente. El horario principal de atención colaborativa obligatoria es de 8:00 AM a 5:00 PM. Se requiere una conexión a Internet de banda ancha de mínimo 30 Mbps y el uso del equipo de cómputo corporativo con la VPN activa.",
-      "palabras_clave": ["teletrabajo", "casa", "remoto", "flex", "hibrido", "virtual"],
+      "palabras_clave": [
+        "teletrabajo",
+        "casa",
+        "remoto",
+        "flex",
+        "hibrido",
+        "virtual"
+      ],
       "documento_referencia": "Manual Garnier Flex - Edición 2026",
       "tiempo_lectura": "4 min de lectura"
     },
     {
-      "id": 3,
+      "id": "3",
       "categoria": "salud",
       "titulo": "Protocolo de Salud y Reporte de Incapacidades",
       "contenido": "Toda incapacidad médica emitida por la CCSS o por médico privado avalado debe ser remitida al departamento de Talento Humano dentro de las primeras 48 horas de la ausencia. En caso de citas médicas programadas, debes ingresar la solicitud de permiso en la plataforma con al menos 3 días hábiles de anticipación para asegurar la cobertura operativa.",
-      "palabras_clave": ["salud", "incapacidad", "medico", "enfermedad", "cita", "ccss"],
+      "palabras_clave": [
+        "salud",
+        "incapacidad",
+        "medico",
+        "enfermedad",
+        "cita",
+        "ccss"
+      ],
       "documento_referencia": "Reglamento Autónomo de Trabajo - Cap. IX",
       "tiempo_lectura": "3 min de lectura"
     },
     {
-      "id": 4,
+      "id": "4",
       "categoria": "general",
       "titulo": "Consulta General procesada por Garnier IA",
       "contenido": "Hemos analizado tu consulta en la base de conocimientos global de Garnier. Si bien la pregunta no encaja en nuestras categorías principales (Vacaciones, Teletrabajo o Salud), te sugerimos contactar directamente al centro de soporte de Talento Humano a través de talento@garnier.cr o consultar el Reglamento Autónomo de Trabajo en la intranet corporativa.",
@@ -72,24 +92,92 @@
     }
   ],
   "preguntas_frecuentes": [
-    { "id": 1, "texto": "¿Cómo funciona el modelo Garnier Flex de teletrabajo?", "categoria": "teletrabajo" },
-    { "id": 2, "texto": "¿Cuántos días de vacaciones tengo en mi primer año?", "categoria": "vacaciones" },
-    { "id": 3, "texto": "¿Qué debo hacer si tengo una incapacidad médica?", "categoria": "salud" }
+    {
+      "id": "1",
+      "texto": "¿Cómo funciona el modelo Garnier Flex de teletrabajo?",
+      "categoria": "teletrabajo"
+    },
+    {
+      "id": "2",
+      "texto": "¿Cuántos días de vacaciones tengo en mi primer año?",
+      "categoria": "vacaciones"
+    },
+    {
+      "id": "3",
+      "texto": "¿Qué debo hacer si tengo una incapacidad médica?",
+      "categoria": "salud"
+    }
   ],
   "historial_consultas": [
     {
-      "id": 1,
+      "id": "1",
       "pregunta": "¿Cuál es el beneficio de días adicionales de vacaciones por antigüedad?",
       "respuesta": "En Garnier & Garnier, a partir del tercer año de servicio continuo, el colaborador acumula 1 día adicional por año, hasta un máximo de 15 días hábiles totales.",
       "categoria": "Vacaciones",
       "fecha": "2026-05-19"
     },
     {
-      "id": 2,
+      "id": "2",
       "pregunta": "¿Cómo reporto mi teletrabajo semanal?",
       "respuesta": "Debes registrar tus días de teletrabajo aprobados en la plataforma Garnier Connect los días lunes antes del mediodía para la planificación de tu departamento.",
       "categoria": "Teletrabajo",
       "fecha": "2026-05-18"
+    },
+    {
+      "pregunta": "Hola me siento mal",
+      "respuesta": "⚠️ **Error de Configuración:** No se ha detectado la clave de API (VITE_GEMINI_API_KEY). Por favor, agrégala a tu archivo `.env` local para habilitar ...",
+      "categoria": "Agente IA",
+      "fecha": "2026-05-20",
+      "id": "Om_osWL2ioE"
+    },
+    {
+      "pregunta": "¿Cómo funciona el modelo Garnier Flex de teletrabajo?",
+      "respuesta": "¡Hola! Basado en la política vigente \"Políticas de Trabajo Híbrido Garnier Flex\", te comparto la siguiente información:\n\nEl programa Garnier Flex esta...",
+      "categoria": "Agente IA",
+      "fecha": "2026-05-20",
+      "id": "r9aRf6B6GOk"
+    },
+    {
+      "pregunta": "Quiero saber de los niggers",
+      "respuesta": "No encuentro esa información detallada en las políticas actuales. Te recomiendo validar directamente con el equipo de Recursos Humanos para darte una ...",
+      "categoria": "Agente IA",
+      "fecha": "2026-05-20",
+      "id": "G1hcURMirbY"
+    },
+    {
+      "pregunta": "Dame el salario minimo de costa rica\n",
+      "respuesta": "No encuentro esa información detallada en las políticas actuales. Te recomiendo validar directamente con el equipo de Recursos Humanos para darte una ...",
+      "categoria": "Agente IA",
+      "fecha": "2026-05-20",
+      "id": "dHkg0A0Q7EM"
+    },
+    {
+      "pregunta": "¿Cuántos días de vacaciones tengo en mi primer año?",
+      "respuesta": "Lo siento, ocurrió un error inesperado al intentar procesar tu consulta con la inteligencia artificial. Por favor, intenta de nuevo más tarde o contac...",
+      "categoria": "Agente IA",
+      "fecha": "2026-05-20",
+      "id": "53iJ2922K1E"
+    },
+    {
+      "pregunta": "¿Cómo funciona el modelo Garnier Flex de teletrabajo?",
+      "respuesta": "Lo siento, ocurrió un error inesperado al intentar procesar tu consulta con la inteligencia artificial. Por favor, intenta de nuevo más tarde o contac...",
+      "categoria": "Agente IA",
+      "fecha": "2026-05-20",
+      "id": "rHUJrxrWKZ4"
+    },
+    {
+      "pregunta": "¿Cómo funciona el modelo Garnier Flex de teletrabajo?",
+      "respuesta": "Lo siento, ocurrió un error inesperado al intentar procesar tu consulta con la inteligencia artificial. Por favor, intenta de nuevo más tarde o contac...",
+      "categoria": "Agente IA",
+      "fecha": "2026-05-20",
+      "id": "pgWdvdznkJA"
+    },
+    {
+      "pregunta": "Hola soy Goku",
+      "respuesta": "Lo siento, ocurrió un error inesperado al intentar procesar tu consulta con la inteligencia artificial. Por favor, intenta de nuevo más tarde o contac...",
+      "categoria": "Agente IA",
+      "fecha": "2026-05-20",
+      "id": "g302vopuUB0"
     }
   ],
   "colaboradores": [
@@ -125,71 +213,226 @@
     }
   ],
   "okrs": [
-    { "id": 1, "colaborador_id": "G-1024", "meta": "Reducir en 15% la huella de carbono en la construcción del nuevo Centro Corporativo.", "progreso": 80, "estado": "En ruta" },
-    { "id": 2, "colaborador_id": "G-1024", "meta": "Implementar la certificación LEED Gold en dos de los proyectos inmobiliarios activos.", "progreso": 60, "estado": "Requiere revisión" },
-    { "id": 3, "colaborador_id": "G-1085", "meta": "Optimizar los tiempos de renderizado y modelado BIM en un 20% utilizando nuevas librerías.", "progreso": 95, "estado": "Casi completado" },
-    { "id": 4, "colaborador_id": "G-1085", "meta": "Capacitar a 5 arquitectos del equipo en modelado avanzado Revit y Dynamo.", "progreso": 40, "estado": "Retrasado" },
-    { "id": 5, "colaborador_id": "G-1120", "meta": "Reducir el tiempo promedio de contratación (Time-to-Hire) a menos de 25 días calendario.", "progreso": 75, "estado": "En ruta" },
-    { "id": 6, "colaborador_id": "G-1120", "meta": "Incrementar la retención de personal contratado en periodo de prueba a un 95%.", "progreso": 90, "estado": "En ruta" }
+    {
+      "id": "1",
+      "colaborador_id": "G-1024",
+      "meta": "Reducir en 15% la huella de carbono en la construcción del nuevo Centro Corporativo.",
+      "progreso": 80,
+      "estado": "En ruta"
+    },
+    {
+      "id": "2",
+      "colaborador_id": "G-1024",
+      "meta": "Implementar la certificación LEED Gold en dos de los proyectos inmobiliarios activos.",
+      "progreso": 60,
+      "estado": "Requiere revisión"
+    },
+    {
+      "id": "3",
+      "colaborador_id": "G-1085",
+      "meta": "Optimizar los tiempos de renderizado y modelado BIM en un 20% utilizando nuevas librerías.",
+      "progreso": 95,
+      "estado": "Casi completado"
+    },
+    {
+      "id": "4",
+      "colaborador_id": "G-1085",
+      "meta": "Capacitar a 5 arquitectos del equipo en modelado avanzado Revit y Dynamo.",
+      "progreso": 40,
+      "estado": "Retrasado"
+    },
+    {
+      "id": "5",
+      "colaborador_id": "G-1120",
+      "meta": "Reducir el tiempo promedio de contratación (Time-to-Hire) a menos de 25 días calendario.",
+      "progreso": 75,
+      "estado": "En ruta"
+    },
+    {
+      "id": "6",
+      "colaborador_id": "G-1120",
+      "meta": "Incrementar la retención de personal contratado en periodo de prueba a un 95%.",
+      "progreso": 90,
+      "estado": "En ruta"
+    }
   ],
   "guias_reunion": [
-    { "id": 1, "colaborador_id": "G-1024", "tipo": "Revision Mensual", "rompehielos": "¿Cómo te has sentido balanceando los proyectos en campo con las capacitaciones de sostenibilidad?", "puntos_clave": "Revisar las demoras de contratación de contratistas LEED y analizar el avance de la medición de carbono.", "acciones": "Coordinar con Compras la agilización del proveedor ambiental y programar taller interno." },
-    { "id": 2, "colaborador_id": "G-1024", "tipo": "Revision de OKRs", "rompehielos": "¿Qué obstáculos has detectado en el segundo hito de la certificación LEED Gold?", "puntos_clave": "Analizar el avance del 80% en reducción de carbono y redefinir plazos para la certificación.", "acciones": "Reunión de alineación con el Comité Ambiental y actualizar cronograma en Jira." },
-    { "id": 3, "colaborador_id": "G-1024", "tipo": "Plan de Desarrollo", "rompehielos": "¿Cuál es el siguiente paso que visualizas en tu carrera dentro de Garnier & Garnier?", "puntos_clave": "Potenciar sus habilidades de liderazgo estratégico y manejo de presupuestos de alto calibre.", "acciones": "Inscribirla en el Programa Garnier de Mentoría Ejecutiva y asignar un presupuesto piloto en Q3." },
-    { "id": 4, "colaborador_id": "G-1085", "tipo": "Revision Mensual", "rompehielos": "¿Qué tal va el nuevo software de modelado que implementamos a inicios de mes?", "puntos_clave": "Felicitar por el 95% de optimización de renders. Abordar el retraso de las capacitaciones a arquitectos.", "acciones": "Reducir sus horas de modelado operativo un 10% para que tenga espacio para dictar los talleres." },
-    { "id": 5, "colaborador_id": "G-1085", "tipo": "Revision de OKRs", "rompehielos": "¿Cómo podemos acelerar el taller de capacitación de Dynamo sin afectar los planos activos?", "puntos_clave": "Estrategias para que los 5 arquitectos completen sus módulos de Revit avanzado.", "acciones": "Crear plantillas de autoaprendizaje y habilitar 1 hora los viernes para resolución de dudas." },
-    { "id": 6, "colaborador_id": "G-1085", "tipo": "Plan de Desarrollo", "rompehielos": "¿Qué habilidades no técnicas te gustaría fortalecer en los próximos seis meses?", "puntos_clave": "Habilidades de comunicación asertiva, empatía en procesos de mentoría técnica.", "acciones": "Asignar curso virtual de Comunicación para Equipos Técnicos y dar feedback semanal." },
-    { "id": 7, "colaborador_id": "G-1120", "tipo": "Revision Mensual", "rompehielos": "¿Cómo ha sido tu experiencia con las nuevas herramientas de inteligencia artificial en reclutamiento?", "puntos_clave": "Felicitar por la retención del 90%. Revisar gastos mensuales de pautas y agencias externas.", "acciones": "Establecer un límite de presupuesto de subcontratación y priorizar la base de talento interna." },
-    { "id": 8, "colaborador_id": "G-1120", "tipo": "Revision de OKRs", "rompehielos": "¿Qué iniciativas han tenido mayor impacto para lograr que el Time-to-Hire baje a 26 días?", "puntos_clave": "Consolidación de las fases de entrevista y automatización de la prueba técnica inicial.", "acciones": "Documentar el flujo óptimo para compartirlo con las jefaturas de otros departamentos." },
-    { "id": 9, "colaborador_id": "G-1120", "tipo": "Plan de Desarrollo", "rompehielos": "¿Cómo te gustaría involucrarte más en la estrategia general de Garnier & Garnier?", "puntos_clave": "Desarrollo de conocimientos financieros corporativos e indicadores estratégicos (KPIs).", "acciones": "Participar como oyente en las revisiones presupuestarias de la junta directiva de Q3." }
+    {
+      "id": "1",
+      "colaborador_id": "G-1024",
+      "tipo": "Revision Mensual",
+      "rompehielos": "¿Cómo te has sentido balanceando los proyectos en campo con las capacitaciones de sostenibilidad?",
+      "puntos_clave": "Revisar las demoras de contratación de contratistas LEED y analizar el avance de la medición de carbono.",
+      "acciones": "Coordinar con Compras la agilización del proveedor ambiental y programar taller interno."
+    },
+    {
+      "id": "2",
+      "colaborador_id": "G-1024",
+      "tipo": "Revision de OKRs",
+      "rompehielos": "¿Qué obstáculos has detectado en el segundo hito de la certificación LEED Gold?",
+      "puntos_clave": "Analizar el avance del 80% en reducción de carbono y redefinir plazos para la certificación.",
+      "acciones": "Reunión de alineación con el Comité Ambiental y actualizar cronograma en Jira."
+    },
+    {
+      "id": "3",
+      "colaborador_id": "G-1024",
+      "tipo": "Plan de Desarrollo",
+      "rompehielos": "¿Cuál es el siguiente paso que visualizas en tu carrera dentro de Garnier & Garnier?",
+      "puntos_clave": "Potenciar sus habilidades de liderazgo estratégico y manejo de presupuestos de alto calibre.",
+      "acciones": "Inscribirla en el Programa Garnier de Mentoría Ejecutiva y asignar un presupuesto piloto en Q3."
+    },
+    {
+      "id": "4",
+      "colaborador_id": "G-1085",
+      "tipo": "Revision Mensual",
+      "rompehielos": "¿Qué tal va el nuevo software de modelado que implementamos a inicios de mes?",
+      "puntos_clave": "Felicitar por el 95% de optimización de renders. Abordar el retraso de las capacitaciones a arquitectos.",
+      "acciones": "Reducir sus horas de modelado operativo un 10% para que tenga espacio para dictar los talleres."
+    },
+    {
+      "id": "5",
+      "colaborador_id": "G-1085",
+      "tipo": "Revision de OKRs",
+      "rompehielos": "¿Cómo podemos acelerar el taller de capacitación de Dynamo sin afectar los planos activos?",
+      "puntos_clave": "Estrategias para que los 5 arquitectos completen sus módulos de Revit avanzado.",
+      "acciones": "Crear plantillas de autoaprendizaje y habilitar 1 hora los viernes para resolución de dudas."
+    },
+    {
+      "id": "6",
+      "colaborador_id": "G-1085",
+      "tipo": "Plan de Desarrollo",
+      "rompehielos": "¿Qué habilidades no técnicas te gustaría fortalecer en los próximos seis meses?",
+      "puntos_clave": "Habilidades de comunicación asertiva, empatía en procesos de mentoría técnica.",
+      "acciones": "Asignar curso virtual de Comunicación para Equipos Técnicos y dar feedback semanal."
+    },
+    {
+      "id": "7",
+      "colaborador_id": "G-1120",
+      "tipo": "Revision Mensual",
+      "rompehielos": "¿Cómo ha sido tu experiencia con las nuevas herramientas de inteligencia artificial en reclutamiento?",
+      "puntos_clave": "Felicitar por la retención del 90%. Revisar gastos mensuales de pautas y agencias externas.",
+      "acciones": "Establecer un límite de presupuesto de subcontratación y priorizar la base de talento interna."
+    },
+    {
+      "id": "8",
+      "colaborador_id": "G-1120",
+      "tipo": "Revision de OKRs",
+      "rompehielos": "¿Qué iniciativas han tenido mayor impacto para lograr que el Time-to-Hire baje a 26 días?",
+      "puntos_clave": "Consolidación de las fases de entrevista y automatización de la prueba técnica inicial.",
+      "acciones": "Documentar el flujo óptimo para compartirlo con las jefaturas de otros departamentos."
+    },
+    {
+      "id": "9",
+      "colaborador_id": "G-1120",
+      "tipo": "Plan de Desarrollo",
+      "rompehielos": "¿Cómo te gustaría involucrarte más en la estrategia general de Garnier & Garnier?",
+      "puntos_clave": "Desarrollo de conocimientos financieros corporativos e indicadores estratégicos (KPIs).",
+      "acciones": "Participar como oyente en las revisiones presupuestarias de la junta directiva de Q3."
+    }
   ],
   "ejemplos_sentimiento": [
-    { "id": 1, "titulo": "Caso de Alta Presión", "texto": "Me siento bastante abrumado con la entrega del diseño arquitectónico del nuevo condominio. Las fechas están muy encima y siento que el equipo está cansado.", "categoria": "Estrés laboral" },
-    { "id": 2, "titulo": "Caso de Éxito y Logro", "texto": "Hoy cerramos con éxito la fase de ventas del Centro Corporativo El Cafetal. Estoy sumamente orgulloso del esfuerzo conjunto del equipo y el resultado obtenido.", "categoria": "Orgullo / Motivación" },
-    { "id": 3, "titulo": "Caso de Incertidumbre", "texto": "Me da un poco de ansiedad el cambio de sistema que implementaremos la próxima semana. Temo que tengamos problemas en la atención inicial de clientes.", "categoria": "Incertidumbre" }
+    {
+      "id": "1",
+      "titulo": "Caso de Alta Presión",
+      "texto": "Me siento bastante abrumado con la entrega del diseño arquitectónico del nuevo condominio. Las fechas están muy encima y siento que el equipo está cansado.",
+      "categoria": "Estrés laboral"
+    },
+    {
+      "id": "2",
+      "titulo": "Caso de Éxito y Logro",
+      "texto": "Hoy cerramos con éxito la fase de ventas del Centro Corporativo El Cafetal. Estoy sumamente orgulloso del esfuerzo conjunto del equipo y el resultado obtenido.",
+      "categoria": "Orgullo / Motivación"
+    },
+    {
+      "id": "3",
+      "titulo": "Caso de Incertidumbre",
+      "texto": "Me da un poco de ansiedad el cambio de sistema que implementaremos la próxima semana. Temo que tengamos problemas en la atención inicial de clientes.",
+      "categoria": "Incertidumbre"
+    }
   ],
   "reglas_sentimiento": [
     {
-      "id": 1,
-      "palabras_clave": ["abrumado", "abrumada", "cansado", "cansada", "estres", "presion", "agotado", "agotada", "mucho trabajo"],
+      "id": "1",
+      "palabras_clave": [
+        "abrumado",
+        "abrumada",
+        "cansado",
+        "cansada",
+        "estres",
+        "presion",
+        "agotado",
+        "agotada",
+        "mucho trabajo"
+      ],
       "emocion": "Estrés Elevado y Fatiga",
       "alerta": "Atención Requerida (Naranja)",
       "clase_alerta": "alerta-naranja",
-      "estres": 85, "orgullo": 15, "ansiedad": 60, "entusiasmo": 20,
+      "estres": 85,
+      "orgullo": 15,
+      "ansiedad": 60,
+      "entusiasmo": 20,
       "consejo": "Detectamos un nivel alto de sobrecarga. Te sugerimos conversar con tu líder sobre prioridades de entregas y tomar una sesión gratuita de Garnier Balance con nuestro especialista de bienestar en el canal corporativo."
     },
     {
-      "id": 2,
-      "palabras_clave": ["orgullo", "orgullosa", "orgulloso", "exito", "logro", "feliz", "excelente", "gracias", "contento"],
+      "id": "2",
+      "palabras_clave": [
+        "orgullo",
+        "orgullosa",
+        "orgulloso",
+        "exito",
+        "logro",
+        "feliz",
+        "excelente",
+        "gracias",
+        "contento"
+      ],
       "emocion": "Orgullo y Entusiasmo",
       "alerta": "Saludable y Óptimo (Verde)",
       "clase_alerta": "alerta-verde",
-      "estres": 10, "orgullo": 95, "ansiedad": 15, "entusiasmo": 90,
+      "estres": 10,
+      "orgullo": 95,
+      "ansiedad": 15,
+      "entusiasmo": 90,
       "consejo": "¡Excelente estado emocional! Te invitamos a compartir tus buenas prácticas en la reunión semanal de equipo y a nominar a un compañero para el reconocimiento Garnier de este mes."
     },
     {
-      "id": 3,
-      "palabras_clave": ["ansiedad", "ansioso", "preocupado", "preocupada", "temo", "miedo", "duda", "incertidumbre"],
+      "id": "3",
+      "palabras_clave": [
+        "ansiedad",
+        "ansioso",
+        "preocupado",
+        "preocupada",
+        "temo",
+        "miedo",
+        "duda",
+        "incertidumbre"
+      ],
       "emocion": "Ansiedad por Incertidumbre",
       "alerta": "Precaución (Amarillo)",
       "clase_alerta": "alerta-amarillo",
-      "estres": 40, "orgullo": 30, "ansiedad": 80, "entusiasmo": 35,
+      "estres": 40,
+      "orgullo": 30,
+      "ansiedad": 80,
+      "entusiasmo": 35,
       "consejo": "La incertidumbre puede generar tensión. Te aconsejamos asistir a la sesión de alineación semanal y revisar la documentación de procesos en la intranet corporativa."
     },
     {
-      "id": 0,
+      "id": "0",
       "palabras_clave": [],
       "emocion": "Equilibrio",
       "alerta": "Estable (Verde)",
       "clase_alerta": "alerta-verde",
-      "estres": 20, "orgullo": 45, "ansiedad": 30, "entusiasmo": 50,
+      "estres": 20,
+      "orgullo": 45,
+      "ansiedad": 30,
+      "entusiasmo": 50,
       "consejo": "Continúa con tus hábitos saludables. Te recomendamos agendar tu sesión de pausa activa de esta semana."
     }
   ],
   "checkins_emocionales": [],
   "reportes_clima": [
     {
-      "id": 101,
+      "id": "101",
       "categoria": "Sugerencia",
       "fecha": "2026-05-19",
       "calificacion_ambiente": 4,
@@ -199,7 +442,7 @@
       "estatus": "En Análisis por Operaciones"
     },
     {
-      "id": 102,
+      "id": "102",
       "categoria": "Alerta Crítica",
       "fecha": "2026-05-17",
       "calificacion_ambiente": 2,
@@ -209,7 +452,7 @@
       "estatus": "Mantenimiento Programado"
     },
     {
-      "id": 103,
+      "id": "103",
       "categoria": "Reconocimiento",
       "fecha": "2026-05-15",
       "calificacion_ambiente": 5,
@@ -218,5 +461,6 @@
       "mensaje": "Felicito a la brigada de salud por la excelente organización del simulacro de evacuación física de esta semana.",
       "estatus": "Procesado"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
