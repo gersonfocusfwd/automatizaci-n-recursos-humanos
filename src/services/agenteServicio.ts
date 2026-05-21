@@ -48,13 +48,12 @@ ${contextoPoliticas}
 `;
 
   try {
-    // Usamos el proxy de vite enviando las peticiones a /gemini
+    // Usamos la conexión directa a la API (Google APIs soporta CORS nativamente)
     const model = genAI.getGenerativeModel(
       { 
         model: 'gemini-1.5-flash',
         systemInstruction: systemInstruction 
-      },
-      { baseUrl: '/gemini' }
+      }
     );
 
     const result = await model.generateContent(pregunta);
@@ -62,7 +61,8 @@ ${contextoPoliticas}
     return response.text();
   } catch (error) {
     console.error("Error al consultar a Gemini:", error);
-    return "Lo siento, ocurrió un error inesperado al intentar procesar tu consulta con la inteligencia artificial. Por favor, intenta de nuevo más tarde o contacta a soporte técnico.";
+    console.warn("Fallando al agente simulado localmente debido a un error con la API de Gemini.");
+    return simularAgenteIA(pregunta, politicas);
   }
 };
 

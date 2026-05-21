@@ -11,12 +11,6 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (ruta) => ruta.replace(/^\/api/, ''),
       },
-      /* Redirige todas las llamadas /gemini hacia la API de Google Gemini */
-      '/gemini': {
-        target: 'https://generativelanguage.googleapis.com',
-        changeOrigin: true,
-        rewrite: (ruta) => ruta.replace(/^\/gemini/, ''),
-      },
     },
   },
 })
