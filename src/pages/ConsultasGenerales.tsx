@@ -4,22 +4,21 @@
    ========================================================================== */
 
 import { useState, useEffect } from 'react';
-import { Send, BookOpen, Clock, ShieldCheck } from 'lucide-react';
+import { Send, BookOpen, ShieldCheck, AlertTriangle, ArrowRight, Tag, Activity } from 'lucide-react';
 import CargandoAnimado from '../components/ui/CargandoAnimado';
 import {
   obtener_politicas,
   obtener_preguntas_frecuentes,
   obtener_historial_consultas,
-  buscar_politica_por_texto,
   guardar_consulta_historial,
 } from '../services/consultasServicio';
 import { consultarAgenteIA } from '../services/agenteServicio';
-import type { Politica, PreguntaFrecuente, HistorialConsulta } from '../types';
+import type { Politica, PreguntaFrecuente, HistorialConsulta, RespuestaAgente } from '../types';
 
 export default function ConsultasGenerales() {
   /* --- ESTADOS EN ESPAÑOL --- */
   const [consulta_texto, establecer_consulta_texto] = useState('');
-  const [respuesta_activa, establecer_respuesta_activa] = useState<{ texto: string, pregunta_origen: string } | null>(null);
+  const [respuesta_activa, establecer_respuesta_activa] = useState<{ respuesta: RespuestaAgente; pregunta_origen: string } | null>(null);
   const [esta_buscando, establecer_esta_buscando] = useState(false);
   const [catalogo_politicas, establecer_catalogo_politicas] = useState<Politica[]>([]);
   const [preguntas_frecuentes, establecer_preguntas_frecuentes] = useState<PreguntaFrecuente[]>([]);
@@ -48,7 +47,7 @@ export default function ConsultasGenerales() {
     establecer_consulta_texto(e.target.value);
   };
 
-  /* manejar_click_enviar: Busca la política más relevante usando el Agente IA y persiste el historial */
+  /* manejar_click_enviar: Consulta al Agente IA y persiste el historial */
   const manejar_click_enviar = async () => {
     if (!consulta_texto.trim()) return;
     if (!catalogo_politicas.length) {
@@ -58,20 +57,24 @@ export default function ConsultasGenerales() {
     establecer_esta_buscando(true);
     establecer_respuesta_activa(null);
 
-    // Consulta al agente LLM real
-    const respuesta_ia = await consultarAgenteIA(consulta_texto, catalogo_politicas);
-    
-    establecer_respuesta_activa({ texto: respuesta_ia, pregunta_origen: consulta_texto });
+    try {
+      // Consulta al agente IA — ahora retorna JSON estructurado
+      const respuesta_ia = await consultarAgenteIA(consulta_texto, catalogo_politicas);
 
-    /* Persistir en json-server */
-    const nueva_entrada: Omit<HistorialConsulta, 'id'> = {
-      pregunta: consulta_texto,
-      respuesta: respuesta_ia.substring(0, 150) + (respuesta_ia.length > 150 ? '...' : ''), // guardamos un resumen o parte de la respuesta
-      categoria: 'Agente IA',
-      fecha: new Date().toISOString().split('T')[0],
-    };
-    const guardado = await guardar_consulta_historial(nueva_entrada);
-    establecer_historial_consultas((prev) => [guardado, ...prev.slice(0, 4)]);
+      establecer_respuesta_activa({ respuesta: respuesta_ia, pregunta_origen: consulta_texto });
+
+      /* Persistir en json-server */
+      const nueva_entrada: Omit<HistorialConsulta, 'id'> = {
+        pregunta: consulta_texto,
+        respuesta: respuesta_ia.mensaje_usuario.substring(0, 150) + (respuesta_ia.mensaje_usuario.length > 150 ? '...' : ''),
+        categoria: 'Agente IA',
+        fecha: new Date().toISOString().split('T')[0],
+      };
+      const guardado = await guardar_consulta_historial(nueva_entrada);
+      establecer_historial_consultas((prev) => [guardado, ...prev.slice(0, 4)]);
+    } catch (error) {
+      console.error("Error en el flujo de consulta:", error);
+    }
     establecer_consulta_texto('');
     establecer_esta_buscando(false);
   };
@@ -79,6 +82,23 @@ export default function ConsultasGenerales() {
   /* manejar_click_pregunta_rapida: Autocompleta el input con una pregunta frecuente */
   const manejar_click_pregunta_rapida = (texto: string) => {
     establecer_consulta_texto(texto);
+  };
+
+  /* obtener_clase_prioridad: Mapea la prioridad a una clase CSS */
+  const obtener_clase_prioridad = (prioridad: string): string => {
+    switch (prioridad) {
+      case 'alta': return 'insignia-prioridad-alta';
+      case 'media': return 'insignia-prioridad-media';
+      case 'baja': return 'insignia-prioridad-baja';
+      default: return 'insignia-prioridad-media';
+    }
+  };
+
+  /* formatear_nombre_accion: Convierte snake_case a texto legible */
+  const formatear_nombre_accion = (accion: string): string => {
+    return accion
+      .replace(/_/g, ' ')
+      .replace(/\b\w/g, (l) => l.toUpperCase());
   };
 
   if (cargando_inicial) {
@@ -158,24 +178,65 @@ export default function ConsultasGenerales() {
             <CargandoAnimado mensaje="Buscando en manuales y reglamentos de Garnier & Garnier..." />
           )}
 
-          {/* Tarjeta de respuesta */}
+          {/* === TARJETA DE RESPUESTA ESTRUCTURADA DEL AGENTE IA === */}
           {respuesta_activa && !esta_buscando && (
-            <div className="tarjeta-respuesta-ia">
+            <div className={`tarjeta-respuesta-ia ${respuesta_activa.respuesta.estado_proceso === 'error' ? 'respuesta-error' : ''}`}>
+              {/* Encabezado con estado y prioridad */}
               <div className="respuesta-ia-encabezado">
                 <span className="insignia-verificacion">
-                  <ShieldCheck size={14} className="icono-insignia" />
-                  <span>Respuesta Oficial del Agente IA</span>
+                  {respuesta_activa.respuesta.estado_proceso === 'exitoso'
+                    ? <ShieldCheck size={14} className="icono-insignia" />
+                    : <AlertTriangle size={14} className="icono-insignia" />}
+                  <span>
+                    {respuesta_activa.respuesta.estado_proceso === 'exitoso'
+                      ? 'Respuesta Oficial del Agente IA'
+                      : 'Error en el Procesamiento'}
+                  </span>
                 </span>
                 <div className="respuesta-ia-metadatos">
-                  <span className="respuesta-ia-metadato">
-                    <BookOpen size={12} />
-                    <span>Políticas Indexadas</span>
+                  <span className={`insignia-prioridad ${obtener_clase_prioridad(respuesta_activa.respuesta.datos_rrhh.prioridad)}`}>
+                    <Activity size={11} />
+                    <span>Prioridad: {respuesta_activa.respuesta.datos_rrhh.prioridad.toUpperCase()}</span>
                   </span>
                 </div>
               </div>
+
+              {/* Mensaje principal para el empleado */}
               <div className="respuesta-ia-cuerpo">
-                <p className="respuesta-ia-texto" style={{ whiteSpace: 'pre-wrap' }}>{respuesta_activa.texto}</p>
+                <p className="respuesta-ia-texto" style={{ whiteSpace: 'pre-wrap' }}>
+                  {respuesta_activa.respuesta.mensaje_usuario}
+                </p>
               </div>
+
+              {/* Panel de datos de RRHH (metadata técnica) */}
+              <div className="respuesta-ia-panel-rrhh">
+                <div className="panel-rrhh-titulo">
+                  <BookOpen size={13} />
+                  <span>Datos del Proceso — Recursos Humanos</span>
+                </div>
+                <div className="panel-rrhh-grid">
+                  <div className="panel-rrhh-campo">
+                    <span className="panel-rrhh-etiqueta">
+                      <ArrowRight size={11} />
+                      Acción del Backend
+                    </span>
+                    <span className="panel-rrhh-valor panel-rrhh-valor-codigo">
+                      {formatear_nombre_accion(respuesta_activa.respuesta.datos_rrhh.accion_requerida)}
+                    </span>
+                  </div>
+                  <div className="panel-rrhh-campo">
+                    <span className="panel-rrhh-etiqueta">
+                      <Tag size={11} />
+                      Análisis del Caso
+                    </span>
+                    <span className="panel-rrhh-valor">
+                      {respuesta_activa.respuesta.datos_rrhh.analisis_detalle}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Pie con la consulta original */}
               <div className="respuesta-ia-pie">
                 <span className="pregunta-origen-etiqueta">Consulta realizada:</span>
                 <span className="pregunta-origen-texto">"{respuesta_activa.pregunta_origen}"</span>
@@ -199,7 +260,6 @@ export default function ConsultasGenerales() {
                     className="historial-item"
                     onClick={() => {
                       establecer_consulta_texto(item.pregunta);
-                      establecer_respuesta_activa({ texto: item.respuesta, pregunta_origen: item.pregunta });
                     }}
                     style={{ cursor: 'pointer', transition: 'all 0.2s ease-in-out' }}
                     title="Haz clic para cargar esta consulta"

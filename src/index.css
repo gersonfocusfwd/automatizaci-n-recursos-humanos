@@ -986,6 +986,103 @@ a.opcion-nav.activo::before {
 .pregunta-origen-etiqueta { font-weight: 700; color: var(--n-400); }
 .pregunta-origen-texto { color: var(--n-700); font-style: italic; }
 
+/* Estilo para respuesta con error */
+.tarjeta-respuesta-ia.respuesta-error {
+  border-color: #f87171;
+  background-color: #fef2f2;
+}
+
+/* Insignias de prioridad */
+.insignia-prioridad {
+  padding: 4px 10px;
+  border-radius: var(--r-full);
+  font-size: 10.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.insignia-prioridad-alta {
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+}
+
+.insignia-prioridad-media {
+  background: #fef3c7;
+  color: #d97706;
+  border: 1px solid #fde68a;
+}
+
+.insignia-prioridad-baja {
+  background: #e0f2fe;
+  color: #0284c7;
+  border: 1px solid #bae6fd;
+}
+
+/* Panel de datos de RRHH */
+.respuesta-ia-panel-rrhh {
+  background: var(--n-50);
+  border: 1px solid var(--n-200);
+  border-radius: var(--r-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.panel-rrhh-titulo {
+  font-family: var(--font-titulo);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--n-800);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px dashed var(--n-200);
+  padding-bottom: 8px;
+}
+
+.panel-rrhh-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.panel-rrhh-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.panel-rrhh-etiqueta {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--n-400);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.panel-rrhh-valor {
+  font-size: 13px;
+  color: var(--n-700);
+  line-height: 1.5;
+}
+
+.panel-rrhh-valor-codigo {
+  font-family: monospace;
+  background: var(--n-100);
+  padding: 2px 6px;
+  border-radius: var(--r-sm);
+  width: fit-content;
+  color: var(--verde-1);
+  font-weight: 600;
+}
+
 /* ==========================================================================
    TARJETA LATERAL
    ========================================================================== */

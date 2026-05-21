@@ -42,6 +42,19 @@ export interface RespuestaConsulta extends Politica {
   pregunta_origen: string;
 }
 
+/* --- Respuesta Estructurada del Agente IA (formato JSON) --- */
+export interface DatosRRHH {
+  accion_requerida: string;
+  prioridad: 'alta' | 'media' | 'baja';
+  analisis_detalle: string;
+}
+
+export interface RespuestaAgente {
+  estado_proceso: 'exitoso' | 'error';
+  mensaje_usuario: string;
+  datos_rrhh: DatosRRHH;
+}
+
 /* --- Módulo Sentimiento Diario --- */
 export interface EjemploSentimiento {
   id: number;

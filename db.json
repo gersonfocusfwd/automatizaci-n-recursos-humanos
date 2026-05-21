@@ -199,6 +199,41 @@
       "respuesta": "No encuentro esa información detallada en las políticas actuales. Te recomiendo validar directamente con el equipo de Recursos Humanos para darte una ...",
       "categoria": "Agente IA",
       "fecha": "2026-05-21"
+    },
+    {
+      "id": "f5c4",
+      "pregunta": "te gustan los hombres?\n",
+      "respuesta": "No encuentro esa información detallada en las políticas actuales. Te recomiendo validar directamente con el equipo de Recursos Humanos para darte una ...",
+      "categoria": "Agente IA",
+      "fecha": "2026-05-21"
+    },
+    {
+      "id": "28a4",
+      "pregunta": "como reporto mi trabajo de la semana\n",
+      "respuesta": "No encuentro esa información detallada en las políticas actuales. Te recomiendo validar directamente con el equipo de Recursos Humanos para darte una ...",
+      "categoria": "Agente IA",
+      "fecha": "2026-05-21"
+    },
+    {
+      "id": "7f2e",
+      "pregunta": "Solicito vacaciones del 10 al 15 de junio por motivos personales.",
+      "respuesta": "Su solicitud de vacaciones ha sido recibida y enviada a su supervisor para aprobación final. Según la política \"Política de Vacaciones y Descansos Gar...",
+      "categoria": "Agente IA",
+      "fecha": "2026-05-21"
+    },
+    {
+      "id": "2ecc",
+      "pregunta": "hola",
+      "respuesta": "No encuentro esa información detallada en las políticas actuales. Te recomiendo validar directamente con el equipo de Recursos Humanos para darte una ...",
+      "categoria": "Agente IA",
+      "fecha": "2026-05-21"
+    },
+    {
+      "id": "a4ed",
+      "pregunta": "¿Cómo funciona el modelo Garnier Flex de teletrabajo?",
+      "respuesta": "¡Hola! Basado en la política vigente \"Políticas de Trabajo Híbrido Garnier Flex\", te comparto la siguiente información:\n\nEl programa Garnier Flex esta...",
+      "categoria": "Agente IA",
+      "fecha": "2026-05-21"
     }
   ],
   "colaboradores": [
@@ -481,6 +516,16 @@
       "calificacion_liderazgo": 5,
       "mensaje": "Felicito a la brigada de salud por la excelente organización del simulacro de evacuación física de esta semana.",
       "estatus": "Procesado"
+    },
+    {
+      "id": "c332",
+      "categoria": "Alerta Crítica",
+      "fecha": "2026-05-21",
+      "calificacion_ambiente": 1,
+      "calificacion_herramientas": 1,
+      "calificacion_liderazgo": 1,
+      "mensaje": "todos ",
+      "estatus": "Recibido de forma Anónima"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
